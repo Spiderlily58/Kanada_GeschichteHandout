@@ -1,0 +1,1156 @@
+# Kanada_GeschichteHandout
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canada — A History</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+:root {
+  --cream:#f5efe3;
+  --paper:#fffaf1;
+  --wine:#702d3d;
+  --dark:#381e27;
+  --rose:#b77b7d;
+  --gold:#b69a69;
+  --muted:#85776e;
+  --line:#dfd2c1;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--dark);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+}
+h1,h2,h3 { font-family:'Playfair Display',serif; }
+nav {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#f5efe3f2;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:12px;
+}
+nav a,nav button {
+  color:var(--wine);
+  text-decoration:none;
+  font:700 10px 'DM Sans';
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  background:none;
+  border:0;
+  padding:4px;
+  cursor:pointer;
+}
+nav button.glossary-trigger {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid #b99a8b;
+  border-radius:999px;
+  background:#fffaf1;
+  color:var(--wine);
+  box-shadow:0 2px 0 #e5d8c9;
+  transition:.2s;
+}
+nav button.glossary-trigger:before {
+  content:'✧';
+  font-size:13px;
+  color:var(--gold);
+}
+nav button.glossary-trigger:hover {
+  background:#eaded0;
+  border-color:var(--wine);
+  transform:translateY(-1px);
+}
+.hero {
+  min-height:520px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+    radial-gradient(circle at 15% 25%,#e7d8c8 0,transparent 22%),
+    radial-gradient(circle at 85% 75%,#e4d0c8 0,transparent 25%),
+    var(--cream);
+  border-bottom:1px solid var(--line);
+}
+.eyebrow,.label {
+  color:var(--rose);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:700;
+}
+.hero h1 {
+  font-size:clamp(55px,10vw,100px);
+  line-height:1.08;
+  margin:20px 0;
+  color:var(--wine);
+}
+.hero h1 span {
+  font-style:italic;
+  font-weight:500;
+}
+.hero p {
+  max-width:590px;
+  color:var(--muted);
+  font-size:15px;
+}
+.ornament {
+  font-size:25px;
+  color:var(--gold);
+  margin:12px;
+}
+.btn {
+  display:inline-block;
+  margin-top:22px;
+  padding:12px 25px;
+  background:var(--wine);
+  color:white;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+section {
+  max-width:1040px;
+  margin:auto;
+  padding:72px 24px;
+}
+.title {
+  font-size:clamp(34px,5vw,48px);
+  color:var(--wine);
+  margin:8px 0 12px;
+}
+.intro {
+  max-width:680px;
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:34px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:20px;
+}
+.card,.topic,.event details,.quiz {
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:24px;
+}
+.card h3,.topic h3 {
+  color:var(--wine);
+  margin-top:0;
+}
+.card p,.topic p {
+  font-size:13px;
+  color:#655951;
+}
+.fact {
+  border-left:2px solid var(--rose);
+  padding-left:14px;
+  margin:16px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+.fact strong {
+  display:block;
+  font:bold 23px 'Playfair Display';
+  color:var(--wine);
+}
+.ornament-line {
+  text-align:center;
+  color:var(--gold);
+  letter-spacing:10px;
+  padding:10px;
+}
+/* TIMELINE */
+.timeline {
+  max-width:800px;
+  margin:38px auto;
+  position:relative;
+}
+.timeline:before {
+  content:'';
+  position:absolute;
+  left:95px;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:var(--line);
+}
+.event {
+  display:grid;
+  grid-template-columns:75px 1fr;
+  gap:40px;
+  margin-bottom:14px;
+  position:relative;
+}
+.year {
+  text-align:right;
+  padding-top:13px;
+  color:var(--wine);
+  font:bold 18px 'Playfair Display';
+}
+.event details {
+  padding:14px 19px;
+  cursor:pointer;
+}
+.event summary {
+  list-style:none;
+  color:var(--wine);
+  font-weight:700;
+  font-size:14px;
+}
+.event summary::-webkit-details-marker { display:none; }
+.event summary:after {
+  content:'+';
+  float:right;
+  color:var(--rose);
+  font-size:20px;
+}
+.event details[open] summary:after { content:'−'; }
+.event details p {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:0;
+}
+/* TOPIC CARDS */
+.topics {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.topic { transition:.2s; }
+.topic:hover {
+  border-color:var(--wine);
+  transform:translateY(-2px);
+}
+.topic .num {
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--rose);
+}
+.topic h3 {
+  font-size:23px;
+  margin:7px 0;
+}
+.topic details summary {
+  cursor:pointer;
+  color:var(--wine);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  list-style:none;
+  margin-top:14px;
+}
+.topic details summary:after { content:'  +'; }
+.topic details[open] summary:after { content:'  −'; }
+.more {
+  border-top:1px solid var(--line);
+  padding-top:12px;
+  margin-top:12px;
+  color:#655951;
+  font-size:13px;
+}
+/* GLOSSARY BUTTON */
+.glossary-callout {
+  background:var(--dark);
+  color:var(--cream);
+  padding:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+.glossary-callout h3 {
+  font-size:26px;
+  margin:0 0 5px;
+}
+.glossary-callout p {
+  font-size:13px;
+  color:#d3bdb5;
+  margin:0;
+}
+.glossary-callout button.glossary-trigger {
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:var(--cream);
+  color:var(--wine);
+  border:1px solid #c7a99a;
+  border-radius:3px;
+  padding:14px 20px;
+  font:700 10px 'DM Sans';
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:4px 4px 0 #75505a;
+  transition:.2s;
+}
+.glossary-callout button.glossary-trigger:after {
+  content:'↗';
+  font-size:15px;
+}
+.glossary-callout button.glossary-trigger:hover {
+  background:#fffaf1;
+  transform:translate(2px,2px);
+  box-shadow:2px 2px 0 #75505a;
+}
+/* QUIZ */
+.quiz {
+  padding:28px;
+}
+.quiz-intro {
+  color:var(--muted);
+  font-size:13px;
+}
+.question {
+  padding:17px 0;
+  border-bottom:1px solid var(--line);
+}
+.question h3 {
+  font-size:18px;
+  color:var(--wine);
+  margin:0 0 11px;
+}
+.option {
+  display:block;
+  margin:7px 0;
+  padding:9px 12px;
+  background:var(--cream);
+  font-size:13px;
+  cursor:pointer;
+  border:1px solid transparent;
+}
+.option:hover { border-color:var(--rose); }
+.option input {
+  accent-color:var(--wine);
+  margin-right:9px;
+}
+.quiz-actions {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.quiz button {
+  margin-top:22px;
+  padding:13px 23px;
+  background:var(--wine);
+  color:white;
+  border:0;
+  font:11px 'DM Sans';
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.quiz button.secondary {
+  background:transparent;
+  color:var(--wine);
+  border:1px solid var(--wine);
+}
+.quiz button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+}
+#result {
+  margin-top:20px;
+  color:var(--wine);
+  font:23px 'Playfair Display';
+}
+#feedback {
+  font-size:13px;
+  color:#655951;
+  margin-top:8px;
+}
+.correct {
+  border-color:#66836a!important;
+  background:#edf2e9!important;
+}
+.incorrect {
+  border-color:#b77b7d!important;
+  background:#f7e9e6!important;
+}
+/* FOOTER */
+footer {
+  text-align:center;
+  background:var(--dark);
+  color:#e4d4c8;
+  padding:34px 15px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+footer span {
+  color:#d5a7a0;
+  font:italic 18px 'Playfair Display';
+}
+/* GLOSSARY POP-UP */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:30;
+  background:#24151ddd;
+  padding:18px;
+  align-items:center;
+  justify-content:center;
+}
+.modal.open { display:flex; }
+.modal-panel {
+  width:min(900px,100%);
+  height:min(86vh,780px);
+  background:var(--dark);
+  color:var(--cream);
+  border:1px solid #9a7074;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 20px 80px #0005;
+}
+.modal-head {
+  padding:22px 25px 15px;
+  border-bottom:1px solid #74505a;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:flex-start;
+}
+.modal-head h2 {
+  font:36px 'Playfair Display';
+  margin:3px 0;
+  color:var(--cream);
+}
+.modal-head p {
+  font-size:12px;
+  color:#d3bdb5;
+  margin:0;
+}
+.close {
+  background:transparent;
+  color:var(--cream);
+  border:1px solid #9a7074;
+  font-size:20px;
+  padding:3px 11px;
+  cursor:pointer;
+}
+.modal-tools { padding:15px 25px 10px; }
+.modal-tools input {
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #9a7074;
+  background:var(--paper);
+  font:13px 'DM Sans';
+  outline:none;
+}
+.filters {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:11px;
+}
+.filters button {
+  background:#50313a;
+  color:#f5efe3;
+  border:1px solid #74505a;
+  padding:7px 11px;
+  font:10px 'DM Sans';
+  cursor:pointer;
+}
+.filters button.active {
+  background:var(--cream);
+  color:var(--wine);
+}
+.modal-words {
+  padding:8px 25px 25px;
+  overflow:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  align-content:start;
+}
+.word {
+  background:#50313a;
+  border:1px solid #74505a;
+  padding:13px;
+}
+.word strong {
+  display:block;
+  font:18px 'Playfair Display';
+  color:#e7c9b8;
+}
+.word span {
+  font-size:12px;
+  color:#e3d5cb;
+}
+.word small {
+  display:block;
+  margin-top:5px;
+  color:#d1b4a9;
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.empty {
+  color:#e7c9b8;
+  font-size:13px;
+  grid-column:1/-1;
+}
+/* MOBILE */
+@media(max-width:650px) {
+  nav { gap:10px; }
+  nav a,nav button { font-size:9px; }
+  nav button.glossary-trigger {
+    padding:7px 10px;
+    gap:6px;
+  }
+  .grid,.topics { grid-template-columns:1fr; }
+  .event {
+    grid-template-columns:55px 1fr;
+    gap:22px;
+  }
+  .timeline:before { left:67px; }
+  .year { font-size:14px; }
+  section { padding:53px 17px; }
+  .glossary-callout {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .modal { padding:8px; }
+  .modal-panel { height:94vh; }
+  .modal-head { padding:17px; }
+  .modal-head h2 { font-size:29px; }
+  .modal-tools { padding:12px 17px 8px; }
+  .modal-words {
+    padding:8px 17px 18px;
+    grid-template-columns:1fr;
+  }
+  .quiz { padding:19px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#intro">Introduction</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#topics">Key topics</a>
+  <button class="glossary-trigger" onclick="openGlossary()">Glossary</button>
+  <a href="#quiz">Quiz</a>
+</nav>
+<header class="hero">
+  <div class="eyebrow">A journey through time · Canadian history</div>
+  <div class="ornament">✦ ─── ❧ ─── ✦</div>
+  <h1>Canada:<br><span>A History</span></h1>
+  <p>From Indigenous civilizations and European colonization to an independent and multicultural nation. Discover the events that shaped Canada.</p>
+  <a class="btn" href="#intro">Begin exploring ↓</a>
+  <div class="ornament">✧</div>
+</header>
+<section id="intro">
+  <div class="label">01 · The beginning</div>
+  <h2 class="title">Understanding Canada's Past</h2>
+  <p class="intro">Canada's history is a story of cultural encounters, conflict, change and the gradual development of a nation. To understand modern Canada, we must look at the people and events that shaped its identity.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>A country with many stories</h3>
+      <p>Long before European explorers arrived, the land now known as Canada was home to diverse Indigenous peoples. They had their own languages, governments, traditions and trading networks.</p>
+      <p>European colonization began to transform the region from the 16th century onwards. French and British powers competed for control, leading to major political and cultural changes.</p>
+      <p>In 1867, Canada became a self-governing Dominion. Over time, it developed into the independent and diverse country we know today.</p>
+    </div>
+    <div class="card">
+      <h3>Canada at a glance</h3>
+      <div class="fact"><strong>Before 1500</strong>Indigenous societies thrive across the land.</div>
+      <div class="fact"><strong>1867</strong>Confederation creates the Dominion of Canada.</div>
+      <div class="fact"><strong>1982</strong>Canada gains full constitutional independence from Britain.</div>
+      <div class="fact"><strong>Today</strong>A bilingual and multicultural country.</div>
+    </div>
+  </div>
+</section>
+<div class="ornament-line">✧ ───── ✧ ───── ✧</div>
+<section id="timeline">
+  <div class="label">02 · Important dates</div>
+  <h2 class="title">A Timeline of Canadian History</h2>
+  <p class="intro">Click on each event to discover what happened and why it matters.</p>
+  <div class="timeline">
+    <div class="event">
+      <div class="year">Before 1500</div>
+      <details>
+        <summary>Indigenous civilizations</summary>
+        <p>For thousands of years, First Nations, Inuit and Métis communities developed diverse cultures, political systems and trade networks across the land. Their societies were deeply connected to the environment.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1497</div>
+      <details>
+        <summary>John Cabot reaches North America</summary>
+        <p>The Italian explorer John Cabot, sailing for England, reached the Atlantic coast of North America. His voyage strengthened European interest in the region, although Indigenous peoples had lived there for thousands of years.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1534</div>
+      <details>
+        <summary>Jacques Cartier explores the region</summary>
+        <p>French explorer Jacques Cartier explored the Gulf of St. Lawrence and claimed parts of the region for France. This marked an important step in French colonial ambitions.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1608</div>
+      <details>
+        <summary>Quebec City is founded</summary>
+        <p>Samuel de Champlain founded Quebec City. It became a major centre of New France and an important base for the French fur trade and settlement.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1763</div>
+      <details>
+        <summary>Britain takes control of New France</summary>
+        <p>After the Seven Years' War, France ceded most of its mainland North American territories to Britain in the Treaty of Paris. British rule transformed the political landscape of the region.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1867</div>
+      <details>
+        <summary>Canadian Confederation</summary>
+        <p>The British North America Act united Ontario, Quebec, Nova Scotia and New Brunswick into the Dominion of Canada. This is considered the birth of modern Canada.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1885</div>
+      <details>
+        <summary>The completion of the railway</summary>
+        <p>The Canadian Pacific Railway was completed, connecting eastern and western Canada. It encouraged migration and economic growth, but its construction also involved the exploitation of workers and the displacement of Indigenous communities.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1914–18</div>
+      <details>
+        <summary>Canada in World War I</summary>
+        <p>As part of the British Empire, Canada entered World War I in 1914. Canadian soldiers fought in major battles, including Vimy Ridge in 1917. The war strengthened Canada's international identity.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1939–45</div>
+      <details>
+        <summary>Canada in World War II</summary>
+        <p>Canada declared war on Germany in 1939. Canadian forces took part in the Battle of the Atlantic, the Italian Campaign and the D-Day landings. The war increased Canada's international influence.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1960s</div>
+      <details>
+        <summary>The Quiet Revolution</summary>
+        <p>Quebec experienced major social, political and economic changes. The province modernized rapidly, and questions about French language rights and Quebec's identity became increasingly important.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1982</div>
+      <details>
+        <summary>The Constitution Act</summary>
+        <p>Canada patriated its Constitution from Britain. The Canadian Charter of Rights and Freedoms became part of the Constitution, protecting fundamental rights and freedoms.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">1999</div>
+      <details>
+        <summary>Nunavut is created</summary>
+        <p>Nunavut became Canada's newest territory. Its creation was an important step towards greater Inuit self-government and recognition of Indigenous rights.</p>
+      </details>
+    </div>
+    <div class="event">
+      <div class="year">Today</div>
+      <details>
+        <summary>Modern Canada</summary>
+        <p>Canada is an independent, bilingual and multicultural country. It continues to address important issues such as reconciliation with Indigenous peoples, immigration, climate change and national identity.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<div class="ornament-line">✧ ───── ✧ ───── ✧</div>
+<section id="topics">
+  <div class="label">03 · Key topics</div>
+  <h2 class="title">The Themes That Shaped Canada</h2>
+  <p class="intro">Explore the most important themes in Canadian history. Open each box to learn more.</p>
+  <div class="topics">
+    <article class="topic">
+      <div class="num">01 / PEOPLE</div>
+      <h3>Indigenous Peoples</h3>
+      <p>First Nations, Inuit and Métis communities have shaped Canada's history for thousands of years.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">Indigenous peoples are not one single group. They have distinct languages, cultures and traditions. Colonization brought land loss, discrimination and forced assimilation. Today, Indigenous rights and reconciliation remain central issues in Canada.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">02 / COLONIZATION</div>
+      <h3>European Colonization</h3>
+      <p>French and British powers competed for territory, resources and influence in North America.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">France established settlements in New France, while Britain expanded its influence. The fur trade was a major part of the colonial economy. European colonization changed Indigenous societies and led to conflicts over land and power.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">03 / POLITICS</div>
+      <h3>Confederation</h3>
+      <p>In 1867, several British colonies united to create the Dominion of Canada.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">Confederation began with four provinces: Ontario, Quebec, Nova Scotia and New Brunswick. The new country had its own federal government, while remaining connected to the British Empire. More provinces and territories joined later.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">04 / WAR</div>
+      <h3>The World Wars</h3>
+      <p>Canada's participation in both World Wars helped shape its international identity.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">Canadian troops fought in Europe during both World Wars. Their contributions, sacrifices and experiences strengthened Canada's sense of nationhood and increased its international role.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">05 / LANGUAGE</div>
+      <h3>Quebec & Language</h3>
+      <p>French and English are central to Canada's cultural and political identity.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">Canada has two official languages: English and French. Quebec is predominantly French-speaking. The Quiet Revolution of the 1960s brought major changes and strengthened the importance of French language rights.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">06 / INJUSTICE</div>
+      <h3>Residential Schools</h3>
+      <p>A painful part of Canada's past was the forced assimilation of Indigenous children.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">For more than a century, Indigenous children were forcibly separated from their families and sent to residential schools. These institutions attempted to erase Indigenous languages and cultures. Their effects continue across generations. Canada is working towards truth, justice and reconciliation.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">07 / SOCIETY</div>
+      <h3>Multiculturalism</h3>
+      <p>Canada is known for its cultural diversity and immigration history.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">People from many different countries and backgrounds have immigrated to Canada. In 1971, Canada adopted an official multiculturalism policy, recognizing cultural diversity as an important part of national identity.</div>
+      </details>
+    </article>
+    <article class="topic">
+      <div class="num">08 / PRESENT</div>
+      <h3>Canada Today</h3>
+      <p>Modern Canada faces opportunities and challenges as a diverse democratic country.</p>
+      <details>
+        <summary>Explore this topic</summary>
+        <div class="more">Canada is a federal parliamentary democracy and constitutional monarchy. Important contemporary topics include Indigenous reconciliation, immigration, climate policy, language rights and Canada's role in international affairs.</div>
+      </details>
+    </article>
+  </div>
+</section>
+<section id="glossary">
+  <div class="glossary-callout">
+    <div>
+      <h3>Need to revise key terms?</h3>
+      <p>Open the glossary to find definitions, search for words and browse by category.</p>
+    </div>
+    <button class="glossary-trigger" onclick="openGlossary()">Open the glossary</button>
+  </div>
+</section>
+<section id="quiz">
+  <div class="label">04 · Test your knowledge</div>
+  <h2 class="title">How Much Have You Learned?</h2>
+  <p class="intro">Answer all ten questions and submit your answers to see your score and explanations.</p>
+  <div class="quiz">
+    <p class="quiz-intro" id="progress">10 questions · Multiple choice · Instant feedback after submission</p>
+    <div class="question">
+      <h3>1. Which three groups are recognized as Indigenous peoples in Canada?</h3>
+      <label class="option"><input type="radio" name="q1" value="a"> First Nations, Inuit and Métis</label>
+      <label class="option"><input type="radio" name="q1" value="b"> French, British and Inuit</label>
+      <label class="option"><input type="radio" name="q1" value="c"> Métis, British and French</label>
+    </div>
+    <div class="question">
+      <h3>2. Who founded Quebec City in 1608?</h3>
+      <label class="option"><input type="radio" name="q2" value="a"> John Cabot</label>
+      <label class="option"><input type="radio" name="q2" value="b"> Samuel de Champlain</label>
+      <label class="option"><input type="radio" name="q2" value="c"> Jacques Cartier</label>
+    </div>
+    <div class="question">
+      <h3>3. What happened in 1763?</h3>
+      <label class="option"><input type="radio" name="q3" value="a"> Canada became independent.</label>
+      <label class="option"><input type="radio" name="q3" value="b"> Britain took control of most of New France.</label>
+      <label class="option"><input type="radio" name="q3" value="c"> The Canadian Confederation was founded.</label>
+    </div>
+    <div class="question">
+      <h3>4. When did Canadian Confederation take place?</h3>
+      <label class="option"><input type="radio" name="q4" value="a"> 1497</label>
+      <label class="option"><input type="radio" name="q4" value="b"> 1867</label>
+      <label class="option"><input type="radio" name="q4" value="c"> 1982</label>
+    </div>
+    <div class="question">
+      <h3>5. Which provinces formed the original Confederation?</h3>
+      <label class="option"><input type="radio" name="q5" value="a"> Ontario, Quebec, Nova Scotia and New Brunswick</label>
+      <label class="option"><input type="radio" name="q5" value="b"> Ontario, Alberta, Quebec and Manitoba</label>
+      <label class="option"><input type="radio" name="q5" value="c"> British Columbia, Quebec, Yukon and Ontario</label>
+    </div>
+    <div class="question">
+      <h3>6. What was the purpose of the residential school system?</h3>
+      <label class="option"><input type="radio" name="q6" value="a"> To protect Indigenous languages.</label>
+      <label class="option"><input type="radio" name="q6" value="b"> To assimilate Indigenous children into Euro-Canadian society.</label>
+      <label class="option"><input type="radio" name="q6" value="c"> To provide university education.</label>
+    </div>
+    <div class="question">
+      <h3>7. What was the Quiet Revolution?</h3>
+      <label class="option"><input type="radio" name="q7" value="a"> A period of major change in Quebec during the 1960s.</label>
+      <label class="option"><input type="radio" name="q7" value="b"> A military conflict in the 19th century.</label>
+      <label class="option"><input type="radio" name="q7" value="c"> Canada's declaration of independence.</label>
+    </div>
+    <div class="question">
+      <h3>8. What happened in 1982?</h3>
+      <label class="option"><input type="radio" name="q8" value="a"> Canada joined the United States.</label>
+      <label class="option"><input type="radio" name="q8" value="b"> The Constitution was patriated and the Charter became part of it.</label>
+      <label class="option"><input type="radio" name="q8" value="c"> Quebec became an independent country.</label>
+    </div>
+    <div class="question">
+      <h3>9. When did Canada adopt its official multiculturalism policy?</h3>
+      <label class="option"><input type="radio" name="q9" value="a"> 1867</label>
+      <label class="option"><input type="radio" name="q9" value="b"> 1971</label>
+      <label class="option"><input type="radio" name="q9" value="c"> 2001</label>
+    </div>
+    <div class="question">
+      <h3>10. Which issue remains important in Canada today?</h3>
+      <label class="option"><input type="radio" name="q10" value="a"> The return to French colonial rule.</label>
+      <label class="option"><input type="radio" name="q10" value="b"> Indigenous rights and reconciliation.</label>
+      <label class="option"><input type="radio" name="q10" value="c"> The creation of the first Canadian colony.</label>
+    </div>
+    <div class="quiz-actions">
+      <button id="submitQuizBtn" type="button">Submit answers</button>
+      <button id="resetQuizBtn" class="secondary" type="button">Try again</button>
+    </div>
+    <div id="result" aria-live="polite"></div>
+    <div id="feedback"></div>
+  </div>
+</section>
+<footer>
+  <span>Canada: A History</span><br>
+  A journey through the events and people that shaped a nation.
+</footer>
+<!-- GLOSSARY POP-UP -->
+<div class="modal" id="glossaryModal" onclick="backdropClose(event)">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div>
+        <div class="label">REVISE & DISCOVER</div>
+        <h2>The History Glossary</h2>
+        <p>Search, browse and revise the key terms for your oral exam.</p>
+      </div>
+      <button class="close" onclick="closeGlossary()" aria-label="Close glossary">×</button>
+    </div>
+    <div class="modal-tools">
+      <input id="glossarySearch" type="search" placeholder="Search a term or its definition..." oninput="filterGlossary()">
+      <div class="filters">
+        <button class="active" data-filter="all" onclick="setFilter('all',this)">All terms</button>
+        <button data-filter="People & Society" onclick="setFilter('People & Society',this)">People & society</button>
+        <button data-filter="Politics" onclick="setFilter('Politics',this)">Politics</button>
+        <button data-filter="History" onclick="setFilter('History',this)">History</button>
+        <button data-filter="Language & Economy" onclick="setFilter('Language & Economy',this)">Language & economy</button>
+      </div>
+    </div>
+    <div class="modal-words" id="glossaryWords">
+      <div class="word" data-category="People & Society">
+        <strong>Indigenous Peoples</strong>
+        <span>The original inhabitants of a particular region.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>First Nations</strong>
+        <span>Indigenous peoples in Canada who are neither Inuit nor Métis.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Inuit</strong>
+        <span>Indigenous peoples traditionally living in Arctic regions.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Métis</strong>
+        <span>A distinct Indigenous people with their own culture, history and mixed Indigenous and European ancestry.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="History">
+        <strong>Colonization</strong>
+        <span>The process of taking control of another territory and its people.</span>
+        <small>History</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Colony</strong>
+        <span>A territory controlled by another country.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="History">
+        <strong>New France</strong>
+        <span>French colonial territories in North America.</span>
+        <small>History</small>
+      </div>
+      <div class="word" data-category="Language & Economy">
+        <strong>Fur Trade</strong>
+        <span>The trade of animal furs between Indigenous communities and European traders.</span>
+        <small>Language & economy</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Confederation</strong>
+        <span>The union of several colonies to form the Dominion of Canada in 1867.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Dominion</strong>
+        <span>A self-governing country within the British Empire.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Constitution</strong>
+        <span>The fundamental laws and principles governing a country.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Sovereignty</strong>
+        <span>The authority of a people or state to govern itself.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="History">
+        <strong>Residential Schools</strong>
+        <span>Institutions where Indigenous children were forcibly separated from their families to be assimilated into Euro-Canadian society.</span>
+        <small>History</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Assimilation</strong>
+        <span>The process of forcing or encouraging a group to adopt another culture.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Reconciliation</strong>
+        <span>A process of acknowledging past injustices and rebuilding relationships.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Multiculturalism</strong>
+        <span>The coexistence and recognition of different cultural groups within one society.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="Language & Economy">
+        <strong>Bilingualism</strong>
+        <span>The use or recognition of two languages.</span>
+        <small>Language & economy</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Federalism</strong>
+        <span>A system in which power is divided between central and regional governments.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Independence</strong>
+        <span>The state of being politically free from another country.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="History">
+        <strong>Quiet Revolution</strong>
+        <span>A period of major social, political and economic change in Quebec during the 1960s.</span>
+        <small>History</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Immigration</strong>
+        <span>The act of moving to another country to live there.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="People & Society">
+        <strong>Displacement</strong>
+        <span>The forced removal of people from their homes or lands.</span>
+        <small>People & society</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Self-government</strong>
+        <span>The ability of a community or people to govern its own affairs.</span>
+        <small>Politics</small>
+      </div>
+      <div class="word" data-category="Politics">
+        <strong>Charter of Rights and Freedoms</strong>
+        <span>A constitutional document protecting fundamental rights and freedoms in Canada since 1982.</span>
+        <small>Politics</small>
+      </div>
+      <p class="empty" id="glossaryEmpty" style="display:none">No matching terms found. Try another search.</p>
+    </div>
+  </div>
+</div>
+<script>
+/* GLOSSARY FUNCTIONS */
+let activeCategory = 'all';
+function openGlossary() {
+  document.getElementById('glossaryModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('glossarySearch').focus();
+}
+function closeGlossary() {
+  document.getElementById('glossaryModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function backdropClose(event) {
+  if (event.target.id === 'glossaryModal') {
+    closeGlossary();
+  }
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeGlossary();
+  }
+});
+function setFilter(category, button) {
+  activeCategory = category;
+  document.querySelectorAll('.filters button').forEach(b => {
+    b.classList.remove('active');
+  });
+  button.classList.add('active');
+  filterGlossary();
+}
+function filterGlossary() {
+  const query = document.getElementById('glossarySearch').value.toLowerCase();
+  let shown = 0;
+  document.querySelectorAll('#glossaryWords .word').forEach(word => {
+    const matchesSearch = word.innerText.toLowerCase().includes(query);
+    const matchesCategory = activeCategory === 'all' || word.dataset.category === activeCategory;
+    const visible = matchesSearch && matchesCategory;
+    word.style.display = visible ? 'block' : 'none';
+    if (visible) shown++;
+  });
+  document.getElementById('glossaryEmpty').style.display = shown ? 'none' : 'block';
+}
+/* QUIZ ANSWERS AND EXPLANATIONS */
+const answers = {
+  q1: ['a', 'The Constitution recognizes First Nations, Inuit and Métis as three distinct Indigenous peoples.'],
+  q2: ['b', 'Samuel de Champlain founded Quebec City in 1608 as part of New France.'],
+  q3: ['b', 'The 1763 Treaty of Paris transferred most of France’s mainland North American territory to Britain.'],
+  q4: ['b', 'Confederation took place in 1867, when four colonies united.'],
+  q5: ['a', 'The original four provinces were Ontario, Quebec, Nova Scotia and New Brunswick.'],
+  q6: ['b', 'The residential school system aimed to assimilate Indigenous children and suppress their languages and cultures.'],
+  q7: ['a', 'The Quiet Revolution describes major social, political and economic changes in Quebec during the 1960s.'],
+  q8: ['b', 'The Canadian Charter of Rights and Freedoms became part of the Constitution in 1982.'],
+  q9: ['b', 'Canada adopted an official multiculturalism policy in 1971.'],
+  q10: ['b', 'Indigenous rights and reconciliation remain important issues in contemporary Canada.']
+};
+/* SUBMIT QUIZ */
+function gradeQuiz() {
+  const result = document.getElementById('result');
+  const feedback = document.getElementById('feedback');
+  const questions = Object.keys(answers);
+  let score = 0;
+  const unanswered = questions.filter(question => {
+    return !document.querySelector('input[name="' + question + '"]:checked');
+  });
+  // Remove old answer colours
+  document.querySelectorAll('.option').forEach(label => {
+    label.classList.remove('correct', 'incorrect');
+  });
+  // Check whether all questions have been answered
+  if (unanswered.length) {
+    result.textContent =
+      'You have answered ' +
+      (questions.length - unanswered.length) +
+      ' out of ' +
+      questions.length +
+      ' questions. Please answer all questions before submitting.';
+    feedback.textContent = '';
+    result.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+    return;
+  }
+  const explanations = [];
+  questions.forEach((question, index) => {
+    const selected = document.querySelector(
+      'input[name="' + question + '"]:checked'
+    );
+    const correct = selected.value === answers[question][0];
+    if (correct) {
+      score++;
+    }
+    selected.closest('label').classList.add(
+      correct ? 'correct' : 'incorrect'
+    );
+    explanations.push({
+      number:index + 1,
+      correct:correct,
+      explanation:answers[question][1]
+    });
+  });
+  // Display score
+  result.textContent =
+    'Your score: ' +
+    score +
+    '/' +
+    questions.length +
+    ' — ' +
+    (
+      score >= 9 ? 'Excellent work!' :
+      score >= 7 ? 'Great job!' :
+      score >= 5 ? 'Good start — keep revising!' :
+      'Keep practising — you can do it!'
+    );
+  // Display explanations
+  feedback.replaceChildren();
+  explanations.forEach(item => {
+    const paragraph = document.createElement('p');
+    const strong = document.createElement('strong');
+    strong.textContent =
+      'Question ' +
+      item.number +
+      ': ' +
+      (item.correct ? 'Correct.' : 'Not quite.');
+    paragraph.appendChild(strong);
+    paragraph.appendChild(
+      document.createTextNode(' ' + item.explanation)
+    );
+    feedback.appendChild(paragraph);
+  });
+  // Prevent changing answers after submission
+  document.querySelectorAll('#quiz input[type="radio"]').forEach(input => {
+    input.disabled = true;
+  });
+  document.getElementById('submitQuizBtn').disabled = true;
+  result.scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
+}
+/* RESET QUIZ */
+function resetQuiz() {
+  document.querySelectorAll('#quiz input[type="radio"]').forEach(input => {
+    input.checked = false;
+    input.disabled = false;
+  });
+  document.querySelectorAll('#quiz .option').forEach(label => {
+    label.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('result').textContent = '';
+  document.getElementById('feedback').replaceChildren();
+  document.getElementById('submitQuizBtn').disabled = false;
+  document.getElementById('progress').textContent =
+    '10 questions · Multiple choice · Instant feedback after submission';
+}
+/* CONNECT BUTTONS TO JAVASCRIPT */
+document.getElementById('submitQuizBtn').addEventListener('click', gradeQuiz);
+document.getElementById('resetQuizBtn').addEventListener('click', resetQuiz);
+</script>
+</body>
+</html>
+
