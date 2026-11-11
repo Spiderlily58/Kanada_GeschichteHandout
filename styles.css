@@ -362,14 +362,94 @@ section {
   cursor:not-allowed;
 }
 #result {
-  margin-top:20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-top:22px;
   color:var(--wine);
-  font:23px 'Playfair Display';
+}
+#result:empty { display:none; }
+#result.is-complete {
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.score-wheel {
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:76px;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:conic-gradient(var(--wine) var(--score-percent),var(--line) 0);
+}
+.score-wheel span {
+  display:grid;
+  place-items:center;
+  width:60px;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--wine);
+  font-size:12px;
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+}
+.score-number {
+  flex:none;
+  color:var(--wine);
+  font:700 40px/1 'Playfair Display',serif;
+  font-variant-numeric:tabular-nums;
+}
+.score-copy span {
+  color:var(--rose);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+.score-copy p {
+  margin:2px 0 0;
+  font:20px 'Playfair Display',serif;
+}
+#result.has-error {
+  display:block;
+  border-left:3px solid var(--rose);
+  padding:10px 14px;
+  background:#f7e9e6;
+  font-size:13px;
 }
 #feedback {
   font-size:13px;
   color:#655951;
-  margin-top:8px;
+  margin-top:14px;
+}
+.feedback-item {
+  padding:14px 16px;
+  border-left:3px solid var(--line);
+  background:var(--cream);
+}
+.feedback-item + .feedback-item { margin-top:8px; }
+.feedback-item.is-correct { border-left-color:#66836a; }
+.feedback-item.is-incorrect { border-left-color:var(--rose); }
+.feedback-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  color:var(--wine);
+}
+.feedback-status {
+  flex:none;
+  color:#547257;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.is-incorrect .feedback-status { color:var(--wine); }
+.feedback-item p {
+  margin:5px 0 0;
+  color:#655951;
 }
 .correct {
   border-color:#66836a!important;
@@ -532,4 +612,10 @@ footer span {
     grid-template-columns:1fr;
   }
   .quiz { padding:19px; }
+  #result.is-complete { gap:13px; }
+  .score-wheel { width:62px; }
+  .score-wheel span { width:48px; font-size:11px; }
+  .score-number { font-size:34px; }
+  .score-copy p { font-size:18px; }
+  .feedback-item { padding:12px; }
 }
