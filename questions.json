@@ -1,0 +1,112 @@
+[
+  {
+    "number": 1,
+    "question": "Which three groups are recognized as Indigenous peoples in Canada?",
+    "rightAnswer": "a",
+    "options": [
+      "First Nations, Inuit and Métis",
+      "French, British and Inuit",
+      "Métis, British and French"
+    ],
+    "explanation": "The Constitution recognizes First Nations, Inuit and Métis as three distinct Indigenous peoples."
+  },
+  {
+    "number": 2,
+    "question": "Who founded Quebec City in 1608?",
+    "rightAnswer": "b",
+    "options": [
+      "John Cabot",
+      "Samuel de Champlain",
+      "Jacques Cartier"
+    ],
+    "explanation": "Samuel de Champlain founded Quebec City in 1608 as part of New France."
+  },
+  {
+    "number": 3,
+    "question": "What happened in 1763?",
+    "rightAnswer": "b",
+    "options": [
+      "Canada became independent.",
+      "Britain took control of most of New France.",
+      "The Canadian Confederation was founded."
+    ],
+    "explanation": "The 1763 Treaty of Paris transferred most of France’s mainland North American territory to Britain."
+  },
+  {
+    "number": 4,
+    "question": "When did Canadian Confederation take place?",
+    "rightAnswer": "b",
+    "options": [
+      "1497",
+      "1867",
+      "1982"
+    ],
+    "explanation": "Confederation took place in 1867, when four colonies united."
+  },
+  {
+    "number": 5,
+    "question": "Which provinces formed the original Confederation?",
+    "rightAnswer": "a",
+    "options": [
+      "Ontario, Quebec, Nova Scotia and New Brunswick",
+      "Ontario, Alberta, Quebec and Manitoba",
+      "British Columbia, Quebec, Yukon and Ontario"
+    ],
+    "explanation": "The original four provinces were Ontario, Quebec, Nova Scotia and New Brunswick."
+  },
+  {
+    "number": 6,
+    "question": "What was the purpose of the residential school system?",
+    "rightAnswer": "b",
+    "options": [
+      "To protect Indigenous languages.",
+      "To assimilate Indigenous children into Euro-Canadian society.",
+      "To provide university education."
+    ],
+    "explanation": "The residential school system aimed to assimilate Indigenous children and suppress their languages and cultures."
+  },
+  {
+    "number": 7,
+    "question": "What was the Quiet Revolution?",
+    "rightAnswer": "a",
+    "options": [
+      "A period of major change in Quebec during the 1960s.",
+      "A military conflict in the 19th century.",
+      "Canada's declaration of independence."
+    ],
+    "explanation": "The Quiet Revolution describes major social, political and economic changes in Quebec during the 1960s."
+  },
+  {
+    "number": 8,
+    "question": "What happened in 1982?",
+    "rightAnswer": "b",
+    "options": [
+      "Canada joined the United States.",
+      "The Constitution was patriated and the Charter became part of it.",
+      "Quebec became an independent country."
+    ],
+    "explanation": "The Canadian Charter of Rights and Freedoms became part of the Constitution in 1982."
+  },
+  {
+    "number": 9,
+    "question": "When did Canada adopt its official multiculturalism policy?",
+    "rightAnswer": "b",
+    "options": [
+      "1867",
+      "1971",
+      "2001"
+    ],
+    "explanation": "Canada adopted an official multiculturalism policy in 1971."
+  },
+  {
+    "number": 10,
+    "question": "Which issue remains important in Canada today?",
+    "rightAnswer": "b",
+    "options": [
+      "The return to French colonial rule.",
+      "Indigenous rights and reconciliation.",
+      "The creation of the first Canadian colony."
+    ],
+    "explanation": "Indigenous rights and reconciliation remain important issues in contemporary Canada."
+  }
+]
